@@ -1,10 +1,8 @@
-import 'dart:convert';
-
 class PictureModel {
   String id;
   String author;
-  double width;
-  double height;
+  int width;
+  int height;
   String url;
   String downloadUrl;
   PictureModel({
@@ -24,10 +22,7 @@ class PictureModel {
       width: map['width'],
       height: map['height'],
       url: map['url'],
-      downloadUrl: map['downloadUrl'],
+      downloadUrl: map['download_url'],
     );
   }
-
-  factory PictureModel.fromJson(String source) =>
-      PictureModel.fromMap(json.decode(source));
 }

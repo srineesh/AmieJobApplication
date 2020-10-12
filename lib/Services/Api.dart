@@ -9,11 +9,11 @@ class Api {
     var response = await http.get(_apiEndpoint);
     if (response.statusCode == 200) {
       var pictures = (json.decode(response.body) as List)
-          .map((pictures) => PictureModel.fromJson(pictures))
+          .map((pictures) => PictureModel.fromMap(pictures))
           .toList();
       return pictures;
     }
     // something wrong happened
-    return 'Could not fetch the images at this time';
+    return 'Could not fetch the episodes at this time';
   }
 }
